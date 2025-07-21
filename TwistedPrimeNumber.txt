@@ -1,0 +1,56 @@
+
+import java.util.*;
+public class Main
+{
+    static int prime(int n)
+    {
+        int c=0;
+        for(int i=1;i<=n;i++)
+        {
+            if(n%i==0)
+            {
+                c++;
+            }
+        }
+        if(c==2 || c==1)
+        {
+            return c;
+        }
+        return 0;
+    }
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    int n=sc.nextInt();
+	    for(int i=1;i<=n;i++)
+	    {
+	        int c=prime(i);
+	        if(c==2 || c==1)
+	        {
+	            if(i<10)
+	            {
+	                System.out.print(i+" ");
+	                
+	            }
+	            else
+	            {
+	                int s=0;
+	                int t=i;
+	                int l=i;
+	                while(l>0)
+	                {
+	                    int r=l%10;
+	                    s=(s*10)+r;
+	                    l=l/10;
+	                }
+	                int ct=prime(s);
+	                if(ct==2)
+	                {
+	                    System.out.print(t+" ");
+	                }
+	            }
+	        }
+	    }
+	    
+	    
+	}
+}
